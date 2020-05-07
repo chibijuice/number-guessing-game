@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+:root {
+  --primary-color: #54123b;
+  --secondary-color: #d43f5f;
+  --wrong: #c02739;
+  --correct: #29c7ac;
+  --button-hover: #ff5f82;
+  --text: #ffcad5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--secondary-color);
+  color: var(--text);
+  font-family: "Montserrat", Arial;
+}
+
+.container {
+  background-color: var(--primary-color);
+  padding: 20px 20px 40px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 30px 8px rgba(43, 0, 18, 0.38);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="text"] {
+  margin: 15px;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 30px;
+  color: var(--primary-color);
+  background-color: var(--text);
+  border: none;
+  border-radius: 5px;
+}
+
+::placeholder {
+  color: var(--primary-color);
+  opacity: 0.5;
+}
+
+.error::placeholder {
+  color: red;
+}
+
+/* button {
+  margin: 15px;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 20px;
+} */
+
+button {
+  /* box-shadow: inset 0px 0px 15px 3px var(--primary-color); */
+  /* background: linear-gradient(to bottom, #2e466e 5%, #415989 100%); */
+  background-color: var(--secondary-color);
+  border-radius: 17px;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  padding: 16px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #263666;
+  transition: background-color 0.1s, transform 0.1s;
+  margin-top: 20px;
+}
+button:hover {
+  /* background: linear-gradient(to bottom, #415989 5%, #2e466e 100%); */
+  background-color: var(--button-hover);
+  transform: scale(1.1);
+}
+button:active {
+  position: relative;
+  top: 1px;
+}
+
+p {
+  text-align: center;
+}
+
+.lowOrHigh {
+  font-size: 30px;
+  display: none;
+}
+
+.lowOrHigh.wrong {
+  color: var(--wrong);
+}
+
+.lowOrHigh.correct {
+  color: var(--correct);
+}
+
+#result {
+  display: none;
+}
+
+#tryAgain {
+  cursor: pointer;
+  margin-left: 3px;
+}
+
+#tryAgain:hover {
+  color: var(--button-hover);
+  transform: scale(1.1) rotate(0);
+
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: scale(1.1) rotate(360deg);
+  }
+}

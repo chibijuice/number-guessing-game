@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Number Guessing Game</title>
+  </head>
+  <body>
+    
+    <div class="container">
+      <h1>Guess my number</h1>
+  
+      <p>
+        I am a randomly selected number between 1 and 100. <br> Try to guess me, and
+        i'll tell you if it's lower or higher!
+      </p>
+      <div class="form">
+        <input
+          class="guessField"
+          id="guessField" 
+          type="text"
+          placeholder="Enter a guess...">
+        </input>
+        <button id="submit">Submit</button>
+      </div>
+
+      <p class="lowOrHigh correct" id="lowOrHigh"></p> <!-- example -->
+
+      <p id="result">
+        It took you <span id="totalGuesses"></span> guesses! <br>
+        Try again!
+        <i class="fas fa-redo-alt" id="tryAgain"></i>
+      </p>
+    </div>
+
+    <p>Previous guesses: 
+      <span id="prevGuesses"></span>
+    </p>
+  
+
+    <script src="script.js"></script>
+  </body>
+</html>
