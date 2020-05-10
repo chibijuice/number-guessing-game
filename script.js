@@ -89,6 +89,8 @@ $form.addEventListener("submit", (e) => {
     $result.style.display = "block";
     $totalGuesses.innerText = total;
   }
+
+  $guessField.value = "";
 });
 
 // Try again
