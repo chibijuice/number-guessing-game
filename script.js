@@ -1,5 +1,5 @@
 const $guessField = document.getElementById("guessField");
-const $submitBtn = document.getElementById("submit");
+const $form = document.getElementById("form");
 const $lowOrHigh = document.getElementById("lowOrHigh");
 const $result = document.getElementById("result");
 const $totalGuesses = document.getElementById("totalGuesses");
@@ -17,7 +17,8 @@ function getRandomNumber(min, max) {
 
 // Submit a number
 
-$submitBtn.addEventListener("click", (e) => {
+$form.addEventListener("submit", (e) => {
+  e.preventDefault(); // To cancel the "normal behaviour" of the browser/event... (in that case, submit = refresh)
   const guess = parseInt($guessField.value);
 
   // Reject non-numeric characters
@@ -50,10 +51,21 @@ $submitBtn.addEventListener("click", (e) => {
   $guessField.placeholder = "Enter a guess...";
   $guessField.classList.remove("error");
 
+  // Reject duplicate guesses
+
+  if (guesses.includes(guess)) {
+    $guessField.placeholder = "You're repeating yourself...";
+    $guessField.value = "";
+    $guessField.classList.add("error");
+    return;
+  }
+
   // Compare the input with the number
 
   const difference = number - guess;
   console.log(guess, number, difference);
+
+  // Show the previous guesses
 
   const total = guesses.push(guess);
   $prevGuesses.innerText = guesses.join(", ");
